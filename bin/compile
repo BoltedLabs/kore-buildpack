@@ -17,4 +17,5 @@ PGSQL=1
 
 # Build kore
 cd $1/vendor/kore
-make && make install
+make
+sudo make install
