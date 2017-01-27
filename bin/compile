@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+echo "-----> Installing kore v2.0.0-release"
+
+# Change into build directory
+cd $1
+
+# Download and extract kore
+curl https://github.com/jorisvink/kore/releases/download/2.0.0-release/kore-2.0.0-release.tar.gz -s -O
+mkdir -p vendor/kore
+tar -C vendor/kore -xvf kore-2.0.0-release.tar.gz
+
+# Set install flags
+TASKS=1
+PGSQL=1
+
+# Build kore
+cd kore
+make && make install
