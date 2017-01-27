@@ -7,7 +7,7 @@ cd $1
 
 # Download and extract kore
 
-curl -sO https://github.com/jorisvink/kore/releases/download/2.0.0-release/kore-2.0.0-release.tar.gz
+curl -sOL https://github.com/jorisvink/kore/releases/download/2.0.0-release/kore-2.0.0-release.tar.gz
 mkdir $1/vendor
 tar -xf kore-2.0.0-release.tar.gz -C $1/vendor
 
