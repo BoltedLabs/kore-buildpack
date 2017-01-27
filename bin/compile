@@ -7,8 +7,8 @@ cd $1
 
 # Download and extract kore
 curl https://github.com/jorisvink/kore/releases/download/2.0.0-release/kore-2.0.0-release.tar.gz -s -O
-mkdir -p vendor/kore
-tar -C vendor/kore -xvf kore-2.0.0-release.tar.gz
+mkdir vendor
+tar -xf kore-2.0.0-release.tar.gz -C vendor
 
 # Set install flags
 TASKS=1
