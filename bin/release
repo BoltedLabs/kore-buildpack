@@ -2,5 +2,5 @@
 cat <<EOF
 addons: []
 default_process_types:
-    web: ./run.sh
+    web: sudo ./run.sh
 EOF
