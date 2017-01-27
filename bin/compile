@@ -15,5 +15,5 @@ TASKS=1
 PGSQL=1
 
 # Build kore
-cd kore
+cd vendor/kore
 make && make install
