@@ -31,5 +31,8 @@ cp -fr $1/vendor/kore/includes $1/src/includes/kore
 cd $1
 $1/vendor/kore/kore build
 
-echo "kore installation complete"
+# Copy profiles
+mkdir -p $1/.profile.d
+cp $1/profile/* $BUILD_DIR/.profile.d/
+
 exit 0
