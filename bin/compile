@@ -5,8 +5,11 @@ echo "-----> Installing kore v2.0.0-release"
 # Change into build directory
 cd $1
 
-# Download and extract kore
+# make all dirs
+mkdir -p $1/vendor/service
+mkdir -p ./src/includes
 
+# Download and extract kore
 curl -sOL https://github.com/jorisvink/kore/releases/download/2.0.0-release/kore-2.0.0-release.tar.gz
 mkdir -p $1/vendor/service
 tar -xf kore-2.0.0-release.tar.gz -C $1/vendor
@@ -18,7 +21,15 @@ PGSQL=1
 
 # Build kore
 cd $1/vendor/kore
-make && make install
+make
+
+# Install
+chmod -R +x $1/vendor/kore
+echo "kore version:"
+$1/vendor/kore/kore -v
+cp -fr $1/vendor/kore/includes ./src/includes/kore
+cd $1
+$1/vendor/kore/kore build
 
 echo "kore installation complete"
 exit 0
