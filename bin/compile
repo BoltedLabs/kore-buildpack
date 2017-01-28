@@ -7,7 +7,7 @@ cd $1
 
 # make all dirs
 mkdir -p $1/vendor/service
-mkdir -p ./src/includes
+mkdir -p $1/src/includes
 
 # Download and extract kore
 curl -sOL https://github.com/jorisvink/kore/releases/download/2.0.0-release/kore-2.0.0-release.tar.gz
@@ -27,7 +27,7 @@ make
 chmod -R +x $1/vendor/kore
 echo "kore version:"
 $1/vendor/kore/kore -v
-cp -fr $1/vendor/kore/includes ./src/includes/kore
+cp -fr $1/vendor/kore/includes $1/src/includes/kore
 cd $1
 $1/vendor/kore/kore build
 
