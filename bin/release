@@ -2,5 +2,5 @@
 cat <<EOF
 addons: []
 default_process_types:
-    web: kore run
+    web: ls && kore run
 EOF
