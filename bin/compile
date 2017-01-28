@@ -29,6 +29,8 @@ chmod -R +x $1/vendor/kore
 echo "kore version:"
 $1/vendor/kore/kore -v
 cp -fr $1/vendor/kore/includes $1/src/includes/kore
+cd $1
+$1/vendor/kore/kore build
 
 # Copy profiles
 mkdir -p $1/.profile.d

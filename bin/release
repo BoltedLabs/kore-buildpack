@@ -2,5 +2,5 @@
 cat <<EOF
 addons: []
 default_process_types:
-    web: ls && kore run
+    web: kore -fnr -c conf/friday.conf
 EOF
