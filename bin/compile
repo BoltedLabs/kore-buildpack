@@ -33,6 +33,6 @@ $1/vendor/kore/kore build
 
 # Copy profiles
 mkdir -p $1/.profile.d
-cp $1/profile/* $BUILD_DIR/.profile.d/
+cp $1/profile/* $1/.profile.d/
 
 exit 0
