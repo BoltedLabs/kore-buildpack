@@ -2,12 +2,6 @@
 env CC="clang"
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 
-if [ -d $APP_NAME ]; then
-    echo "-----> Moving app files"
-    mkdir $APP_NAME
-    cp * $APP_NAME
-fi
-
 echo "-----> Installing kore v2.0.0-release"
 
 # Change into build directory
@@ -38,12 +32,7 @@ chmod -R +x $1/vendor/kore
 echo "kore version:"
 $1/vendor/kore/kore -v
 cp -fr $1/vendor/kore/includes $1/src/includes/kore
-
-if [ -d $APP_NAME ]; then
-    cd $1/$APP_NAME
-else
-    cd $1
-fi
+cd $1
 
 echo "-----> Building project..."
 $1/vendor/kore/kore build
