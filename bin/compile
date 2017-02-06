@@ -23,7 +23,7 @@ PGSQL=1
 
 # Build kore
 cd $1/vendor/kore
-make
+make BENCHMARK=1
 
 # Install
 chmod -R +x $1/vendor/kore
