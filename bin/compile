@@ -30,8 +30,8 @@ echo "kore version:"
 $1/vendor/kore/kore -v
 cp -fr $1/vendor/kore/includes $1/src/includes/kore
 cd $1
-ls -lah
-# $1/vendor/kore/kore build
+echo "-----> Building project..."
+$1/vendor/kore/kore build
 
 # Copy profiles
 mkdir -p $1/.profile.d
