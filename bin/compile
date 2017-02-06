@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+env CC="clang"
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 
 echo "-----> Installing kore v2.0.0-release"
