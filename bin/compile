@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 env CC="clang"
 BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
+APP=$(./serviceinfo.sh)
+
+echo "-----> Moving app files"
+mkdir $APP
+cp * $APP
 
 echo "-----> Installing kore v2.0.0-release"
 
@@ -32,7 +37,7 @@ chmod -R +x $1/vendor/kore
 echo "kore version:"
 $1/vendor/kore/kore -v
 cp -fr $1/vendor/kore/includes $1/src/includes/kore
-cd $1
+cd $1/$APP
 echo "-----> Building project..."
 $1/vendor/kore/kore build
 
