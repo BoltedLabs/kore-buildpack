@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 cat <<EOF
-addons: []
+---
 default_process_types:
-    web: kore -fnr -c conf/friday.conf
+  web: sh run.sh
 EOF
