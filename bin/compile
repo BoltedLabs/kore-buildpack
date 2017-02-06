@@ -20,6 +20,8 @@ tar -xf kore-2.0.0-release.tar.gz -C $1/vendor
 PREFIX=$1/vendor/service
 TASKS=1
 PGSQL=1
+DEBUG=1
+NOTLS=1
 
 # Build kore
 cd $1/vendor/kore
